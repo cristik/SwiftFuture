@@ -19,12 +19,11 @@ steps:
 - task: ShellScript@2
   inputs:
     scriptPath: cobertura.sh
-    args: '> build/reports/cobertura.xml'
 - task: PublishTestResults@2
   inputs:
     testRunner: 'JUnit' # Options: JUnit, NUnit, VSTest, XUnit
     testResultsFiles: 'build/reports/junit.xml'
 - task: PublishCodeCoverageResults@1
   inputs:
-    codeCoverageTool: 'Cobertura' # Options: cobertura, jaCoCo
+    codeCoverageTool: 'cobertura' # Options: cobertura, jaCoCo
     summaryFileLocation: 'build/reports/cobertura.xml'
