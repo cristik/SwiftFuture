@@ -18,7 +18,7 @@ steps:
     #destinationSimulators: 'iPhone 8'
 - task: ShellScript@2
   inputs:
-    scriptPath: xccov-to-sonarqube-generic.sh
+    scriptPath: cobertura.sh
     args: 'build/Logs/Test/*.xccovarchive'
 - task: PublishTestResults@2
   inputs:
