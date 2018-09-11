@@ -14,7 +14,7 @@ steps:
     configuration: 'Debug'
     xcodeVersion: '9' # Options: 8, 9, default, specifyPath
     actions: 'test'
-    args: '-enableCodeCoverage YES -derivedDataPath build`
+    args: '-enableCodeCoverage YES -derivedDataPath build'
     #destinationSimulators: 'iPhone 8'
 - task: ShellScript@2
   inputs:
