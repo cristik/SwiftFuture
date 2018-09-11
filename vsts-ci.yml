@@ -15,7 +15,15 @@ steps:
     xcodeVersion: '9' # Options: 8, 9, default, specifyPath
     actions: 'test'
     #destinationSimulators: 'iPhone 8'
+- task: ShellScript@2
+  inputs:
+    scriptPath: xccov-to-sonarqube-generic.sh
+    args: 'build/Logs/Test/*.xccovarchive > build/reports/cobertura.xml'
 - task: PublishTestResults@2
   inputs:
     testRunner: 'JUnit' # Options: JUnit, NUnit, VSTest, XUnit
     testResultsFiles: 'build/reports/junit.xml'
+- task: PublishCodeCoverageResults@1
+  inputs:
+    codeCoverageTool: 'Cobertura' # Options: cobertura, jaCoCo
+    summaryFileLocation: 'build/reports/cobertura.xml'
