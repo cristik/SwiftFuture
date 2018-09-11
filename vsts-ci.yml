@@ -18,3 +18,4 @@ steps:
 - task: PublishTestResults@2
   inputs:
     testRunner: 'JUnit' # Options: JUnit, NUnit, VSTest, XUnit
+    testResultsFiles: 'build/reports/junit.xml'
