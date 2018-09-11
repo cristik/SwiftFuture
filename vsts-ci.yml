@@ -25,5 +25,5 @@ steps:
     testResultsFiles: 'build/reports/junit.xml'
 - task: PublishCodeCoverageResults@1
   inputs:
-    codeCoverageTool: 'cobertura' # Options: cobertura, jaCoCo
+    codeCoverageTool: 'Cobertura' # Options: cobertura, jaCoCo
     summaryFileLocation: '$(System.DefaultWorkingDirectory)/build/reports/cobertura.xml'
