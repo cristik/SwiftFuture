@@ -9,7 +9,7 @@ pool:
 steps:
 - task: Xcode@5
   inputs:
-    scheme: ''
+    scheme: 'SwiftFuture'
     sdk: 'iphoneosimulator'
     configuration: 'Debug'
     xcodeVersion: '9' # Options: 8, 9, default, specifyPath
