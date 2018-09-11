@@ -10,6 +10,6 @@ steps:
 - task: Xcode@5
   inputs:
     scheme: 'SwiftFuture'
-    sdk: 'iphoneosimulator'
+    sdk: 'iphonesimulator'
     configuration: 'Debug'
     xcodeVersion: '9' # Options: 8, 9, default, specifyPath
