@@ -14,3 +14,4 @@ steps:
     configuration: 'Debug'
     xcodeVersion: '9' # Options: 8, 9, default, specifyPath
     actions: 'test'
+    destinationSimulators: 'iPhone 8'
