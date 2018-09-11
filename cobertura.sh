@@ -14,13 +14,13 @@ function convert_file {
 }
 
 function xccov_to_generic {
-  echo '<coverage version="1">'
+  echo '<coverage version="1"><packages><package name="" line-rate="1.0" branch-rate="1.0" complexity="1.0">'
   for xccovarchive_file in "$@"; do
     xcrun xccov view --file-list "$xccovarchive_file" | while read -r file_name; do
       convert_file "$xccovarchive_file" "$file_name"
     done
   done
-  echo '</coverage>'
+  echo '</package></packages></coverage>'
 }
 
 xccov_to_generic build/Logs/Test/*.xccovarchive > build/reports/cobertura.xml
