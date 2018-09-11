@@ -23,4 +23,4 @@ function xccov_to_generic {
   echo '</coverage>'
 }
 
-xccov_to_generic build/Logs/Test/*.xccovarchive > build/reports/cobertura.xml
+xccov_to_generic build/Logs/Test/*.xccovarchive

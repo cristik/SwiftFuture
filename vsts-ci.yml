@@ -19,6 +19,7 @@ steps:
 - task: ShellScript@2
   inputs:
     scriptPath: cobertura.sh
+    args: '> build/reports/cobertura.xml'
 - task: PublishTestResults@2
   inputs:
     testRunner: 'JUnit' # Options: JUnit, NUnit, VSTest, XUnit
