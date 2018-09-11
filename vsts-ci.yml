@@ -19,7 +19,7 @@ steps:
 - task: ShellScript@2
   inputs:
     scriptPath: xccov-to-sonarqube-generic.sh
-    args: 'build/Logs/Test/*.xccovarchive > build/reports/cobertura.xml'
+    args: 'build/Logs/Test/*.xccovarchive'
 - task: PublishTestResults@2
   inputs:
     testRunner: 'JUnit' # Options: JUnit, NUnit, VSTest, XUnit
