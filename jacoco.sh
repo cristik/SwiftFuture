@@ -7,22 +7,22 @@ function convert_file {
   filename=$(basename -- "$file_path")
   extension="${filename##*.}"
   filename="${filename%.*}"
-  echo "<class name=\"$filename\"><sourcefile name=\"$file_path\">"
+  echo "<sourcefile name=\"$file_path\">"
   xcrun xccov view --file "$file_path" "$xccovarchive_file" | \
     sed -n '
     s/^ *\([0-9][0-9]*\): *\([0-9][0-9]*\).*$/<line nr="\1" mi="0" ci="\2" mb="0" cb="0"\/>/p
     '
-  echo '</sourcefile></class>'
+  echo '</sourcefile>'
 }
 
 function xccov_to_generic {
-  echo '<report name="jaCoCo">'
+  echo '<report name="jaCoCo"><package name="">'
   for xccovarchive_file in "$@"; do
     xcrun xccov view --file-list "$xccovarchive_file" | while read -r file_name; do
       convert_file "$xccovarchive_file" "$file_name"
     done
   done
-  echo '</report>'
+  echo '</package></report>'
 }
 
 xccov_to_generic build/Logs/Test/*.xccovarchive > build/reports/jacoco.xml
