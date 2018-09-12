@@ -28,4 +28,4 @@ cristiankocza, kocza.cristian@gmail.com
 
 SwiftFuture is available under the MIT license. See the LICENSE file for more info.
 
-PR #1
+PR #2
