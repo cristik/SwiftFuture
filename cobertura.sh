@@ -16,7 +16,11 @@ function convert_file {
 }
 
 function xccov_to_generic {
-  echo '<coverage line-rate="0.9" branch-rate="0.75"><packages><package name="" line-rate="1.0" branch-rate="1.0" complexity="1.0"><classes>'
+  echo '<?xml version="1.0" ?>'
+  echo '<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">'  
+  echo '<coverage line-rate="0.9" branch-rate="0.75">'
+  echo '<sources><source>'`pwd`'</source></sources>'
+  echo '<packages><package name="" line-rate="1.0" branch-rate="1.0" complexity="1.0"><classes>'
   for xccovarchive_file in "$@"; do
     xcrun xccov view --file-list "$xccovarchive_file" | while read -r file_name; do
       convert_file "$xccovarchive_file" "$file_name"
