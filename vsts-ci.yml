@@ -18,7 +18,7 @@ steps:
     #destinationSimulators: 'iPhone 8'
 - task: ShellScript@2
   inputs:
-    scriptPath: jacoco.sh
+    scriptPath: cobertura.sh
 - task: PublishTestResults@2
   inputs:
     testRunner: 'JUnit' # Options: JUnit, NUnit, VSTest, XUnit
