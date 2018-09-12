@@ -26,4 +26,4 @@ steps:
 - task: PublishCodeCoverageResults@1
   inputs:
     codeCoverageTool: 'cobertura' # Options: cobertura, jaCoCo
-    summaryFileLocation: 'build/reports/cobertura.xml'
+    summaryFileLocation: '$(System.DefaultWorkingDirectory)/build/reports/cobertura.xml'
