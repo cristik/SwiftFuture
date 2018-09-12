@@ -26,4 +26,4 @@ steps:
 - task: PublishCodeCoverageResults@1
   inputs:
     codeCoverageTool: 'jaCoCo' # Options: cobertura, jaCoCo
-    summaryFileLocation: '$(System.DefaultWorkingDirectory)/build/reports/jacoco.xml'
+    summaryFileLocation: 'build/reports/jacoco.xml'
